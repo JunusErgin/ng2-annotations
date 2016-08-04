@@ -1,2 +1,12 @@
 # ng2-collaborative-annotations
-Annotate every HTML section with lines, highlights and texts by just wrapping it in a ng-2 directive. The lines can be exported as json.
+Annotate every HTML section with lines, highlights and texts by just wrapping it in an Angular 2 directive. 
+
+
+# Usage
+  `````
+  <ng2-annotations>
+    <img src="YourImagePath" style="width: 100%;">
+  </ng2-annotations>
+  ````
+# Note
+This library is still under construction. I'll try my best to keep everything stable.
