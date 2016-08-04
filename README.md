@@ -1,6 +1,9 @@
 # ng2-collaborative-annotations
 Annotate every HTML section with lines, highlights and texts by just wrapping it in an Angular 2 directive. 
 
+# Dependencies
+Angular 2, Tested with RC4
+
 
 # Usage
   `````
