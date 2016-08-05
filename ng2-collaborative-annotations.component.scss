@@ -1,0 +1,62 @@
+.col-ann-toolbar {
+  width: 100%;
+  border: 1px solid lightgray;
+
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+
+  .col-ann-toolbar-btn {
+    background-color: transparent;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid transparent;
+
+    &:hover {
+      border: 1px solid lightgrey;
+    }
+    > i {
+      font-size: 1.5rem;
+    }
+  }
+
+  .col-ann-toolbar-btn-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+    > i {
+      color: #359ead;
+    }
+  }
+
+  .col-ann-toolbar-loading {
+    margin-left: auto;
+  }
+}
+
+/** container for the content and the annotations**/
+.col-ann-content-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.col-ann-content-container-element {
+  width: 100%;
+  > img{
+    width: 100%;
+  }
+}
+
+.col-ann-content {
+  width: 100%;
+}
+
+/** For the annotation div over the actual content**/
+.col-ann-content-overlay {
+  margin-left: -100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 100;
+}
+
+.col-ann-offset-left {
+  left: 1rem;
+}
+

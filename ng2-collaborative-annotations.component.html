@@ -1,0 +1,51 @@
+<div>
+    <!-- Row for displaying the toolbar -->
+    <div>
+      <div class="col-ann-toolbar">
+        <button *ngFor="let tool of tools" class="col-ann-toolbar-btn" (click)="selectTool(tool)"
+                [class.col-ann-toolbar-btn-selected]="selectedTool===tool">
+          <i [class]="tool.iconClass" aria-hidden="true"></i>
+        </button>
+        <div *ngIf="saving" class="col-ann-toolbar-loading">
+          <span>
+            Speichern...
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row for displaying the content -->
+    <div>
+      <!-- Container for annotation area-->
+      <div class="col-ann-content-container">
+        <!-- Displaying the content -->
+        <div class="col-ann-content-container-element">
+         <ng-content></ng-content>
+        </div>
+
+        <svg class="col-ann-content-container-element col-ann-content-overlay"
+             (mousemove)="drawLine($event)"
+             (mousedown)="startAnnotation()"
+             (mouseup)="stopAnnotation()"
+             (mouseleave)="stopAnnotation()">
+          <!-- All Annotation Elements -->
+          <polyline *ngFor="let line of allLines"
+                    [attr.points]="line.getPolylinePoints()"
+                    [style.stroke]="line.stroke"
+                    [style.stroke-width]="line.strokeWidth"
+                    [style.opacity]="line.opacity"
+                    style="fill:none;">
+          </polyline>
+
+          <!-- Display current Annotation Element-->
+          <polyline *ngIf="!!currentAnnotationElement"
+                    [attr.points]="currentAnnotationElement?.getPolylinePoints()"
+                    [style.stroke]="currentAnnotationElement?.stroke"
+                    [style.stroke-width]="currentAnnotationElement?.strokeWidth"
+                    [style.opacity]="currentAnnotationElement?.opacity"
+                    style="fill:none;">
+          </polyline>
+        </svg>
+      </div>
+    </div>
+</div>
