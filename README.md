@@ -6,6 +6,9 @@ Angular 2, Tested with RC4
 
 
 # Usage
+Import the ng2-collaborative-annotations.component.ts
+
+Afterwards use the following directive:
   `````
   <ng2-annotations>
     <img src="YourImagePath" style="width: 100%;">
